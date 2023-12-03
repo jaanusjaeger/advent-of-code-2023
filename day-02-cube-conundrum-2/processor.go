@@ -9,15 +9,6 @@ import (
 
 type cubes map[string]int
 
-func (c cubes) subset(o cubes) bool {
-	for key, val := range c {
-		if val > o[key] {
-			return false
-		}
-	}
-	return true
-}
-
 func (c cubes) power() int {
 	if len(c) == 0 {
 		return 0
