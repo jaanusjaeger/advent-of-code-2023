@@ -24,3 +24,7 @@ func MustParseInt(s string) int {
 	}
 	return i
 }
+
+func IsDigit(b byte) bool {
+	return b >= '0' && b <= '9'
+}
