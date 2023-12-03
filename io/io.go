@@ -13,7 +13,7 @@ func MustGetArg() string {
 	return os.Args[1]
 }
 
-func LineByLine(file string, cb func(lile string) error) error {
+func LineByLine(file string, cb func(line string) error) error {
 	f, err := os.Open(file)
 	if err != nil {
 		return fmt.Errorf("opening file: %w", err)
