@@ -12,7 +12,7 @@ func main() {
 
 	log.Infof("INPUT : %s", input)
 
-	p := &processor{}
+	p := newProcessor()
 
 	err := io.LineByLine(input, p.process)
 	if err != nil {

@@ -6,6 +6,10 @@ type processor struct {
 	sum int
 }
 
+func newProcessor() *processor {
+	return &processor{}
+}
+
 func (p *processor) process(line string) error {
 	if line == "" {
 		return nil
