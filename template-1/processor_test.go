@@ -4,12 +4,9 @@ import (
 	"testing"
 
 	"github.com/jaanusjaeger/advent-of-code-2023/io"
-	"github.com/jaanusjaeger/advent-of-code-2023/log"
 )
 
 func TestProcessor(t *testing.T) {
-	log.SetDebug(false)
-
 	tests := []struct {
 		input  string
 		result any
