@@ -25,6 +25,25 @@ func MustParseInt(s string) int {
 	return i
 }
 
+// Split is a special version of 'strings.Split' that removes empty values.
+func Split(s, sep string) []string {
+	return RmEmpty(strings.Split(s, sep))
+}
+
 func IsDigit(b byte) bool {
 	return b >= '0' && b <= '9'
+}
+
+func RmEmpty[T comparable](vv []T) []T {
+	var result []T
+	var empty T
+
+	for _, v := range vv {
+		if v == empty {
+			continue
+		}
+		result = append(result, v)
+	}
+
+	return result
 }
