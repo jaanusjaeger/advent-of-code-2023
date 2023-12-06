@@ -30,6 +30,16 @@ func Split(s, sep string) []string {
 	return RmEmpty(strings.Split(s, sep))
 }
 
+// MustSplitInt calls 'Split' and then 'MustParseInt' on each resulting value.
+func MustSplitInt(s, sep string) []int {
+	vals := Split(s, sep)
+	result := make([]int, len(vals))
+	for i, v := range vals {
+		result[i] = MustParseInt(v)
+	}
+	return result
+}
+
 func IsDigit(b byte) bool {
 	return b >= '0' && b <= '9'
 }
